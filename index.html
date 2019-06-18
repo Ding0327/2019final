@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>2019final</title>
+  
+  
+  
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @charset "UTF-8";
+* {
+  color: #555;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-family: 微軟正黑體;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-30deg, #f55298, #0ec044, #1b4d21, #f6c845, #b91722, #d4bda0, #213ef1, #6d21e1);
+  animation: anim 15s linear infinite;
+  background-size: 1000% 1000%;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.about {
+  font-weight: 200;
+  background-color: #2c303a;
+  width: 100%;
+  min-width: 480px;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  color: #888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  z-index: 3;
+  border-bottom: 1px solid #131418;
+}
+.about a {
+  font-weight: normal;
+  color: #fff;
+  margin: 0 5px;
+  padding: 2px 3px;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+.about a:after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 6px);
+  height: 1px;
+  background-color: #46b7a7;
+  bottom: 0;
+  transition: all 0.3s ease;
+}
+.about a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0px;
+  background-color: #46b7a7;
+  right: 0;
+  bottom: 0;
+  transition: all 0.3s 0.3s ease;
+  z-index: -1;
+}
+.about a:hover:after {
+  width: 0;
+  left: 0;
+}
+.about a:hover:before {
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+.about .one {
+  width: 2px;
+  height: 20px;
+  background-color: #444857;
+  margin: 0 10px 0 5px;
+}
+.about .two {
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  background-color: #444857;
+  margin: 0 5px;
+}
+
+.pic {
+  margin-left: 10px;
+  width: 18px;
+  height: 20px;
+  background: #fff;
+  mask-image: url("https://ding0327.github.io/image/instagram.svg");
+}
+
+h3 {
+  margin-top: 40px;
+  color: #333;
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+}
+
+.name {
+  font-weight: 800;
+  font-size: 28px;
+}
+
+.job {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+.job:before {
+  content: "";
+}
+
+.little_eng {
+  margin-left: 10px;
+  font-size: 11px;
+}
+
+.namecard {
+  background-color: #eee;
+  width: 350px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  box-shadow: 10px 5px 50px rgba(255, 255, 255, 0.4), 5px 5px 30px rgba(50, 50, 50, 0.2);
+  border: solid 1px rgba(0, 0, 0, 0.05);
+  padding: 22px;
+  margin-top: 150px;
+  border-radius: 8px;
+  transition-duration: 0.5s;
+  overflow: hidden;
+  position: relative;
+  transform-origin: 50% 50%;
+}
+.namecard:hover {
+  background: #333;
+  transform: translateY(-15px) translateX(-15px);
+  box-shadow: 10px 10px 30px rgba(50, 50, 50, 0.3);
+}
+.namecard:hover .circle1 {
+  transform-origin: 50% 50%;
+  transform: scale(1.3);
+  background-color: initial;
+  border: solid 3px #00a98f;
+}
+.namecard:hover .circle2 {
+  transform-origin: 50% 50%;
+  transform: scale(1.3);
+  background-color: #00a98f;
+}
+.namecard:hover h2 {
+  color: #fff;
+}
+.namecard:hover h2 span {
+  color: #fff;
+}
+.namecard:hover p {
+  color: #fff;
+}
+.namecard h5 {
+  color: #00a98f;
+}
+.namecard p {
+  font-size: 10px;
+  line-height: 20px;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  background-color: #00a98f;
+  border-radius: 100%;
+  transition-duration: 1s;
+}
+
+.circle2 {
+  width: 60px;
+  height: 60px;
+  left: initial;
+  right: -35px;
+  top: -35px;
+  background-color: initial;
+  border: solid 3px #00a98f;
+  transform-delay: 0.4s;
+}
+
+a, hr {
+  text-decoration: none;
+  display: block;
+  border-style: none;
+}
+
+hr {
+  border-top-style: solid;
+}
+
+.namecardtext {
+  bottom: 120px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 30px;
+  animation: ani 3s infinite;
+}
+@keyframes ani {
+  0% {
+    transform: translateX(-40px);
+    letter-spacing: 0px;
+  }
+  25% {
+    letter-spacing: 5px;
+  }
+  50% {
+    transform: translateX(40px);
+    letter-spacing: 0px;
+  }
+  75% {
+    letter-spacing: 5px;
+  }
+  100% {
+    transform: translateX(-40px);
+    letter-spacing: 0px;
+  }
+}
+@keyframes anim {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.allbub {
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  z-index: -3;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.allbub [class*="bub"] {
+  background-color: #fff;
+  width: 4px;
+  height: 20px;
+  border-radius: 2px;
+  animation: falling 2s infinite;
+}
+.allbub .bub1 {
+  position: absolute;
+  left: 2.2984258316%;
+  top: -16.3333617855%;
+  animation-delay: -0.2s;
+}
+.allbub .bub2 {
+  position: absolute;
+  left: 6.0794484725%;
+  top: 0.6378365829%;
+  animation-delay: -0.4s;
+}
+.allbub .bub3 {
+  position: absolute;
+  left: 66.9698354242%;
+  top: 38.6786967587%;
+  animation-delay: -0.6s;
+}
+.allbub .bub4 {
+  position: absolute;
+  left: 64.0297455596%;
+  top: 63.6495154938%;
+  animation-delay: -0.8s;
+}
+.allbub .bub5 {
+  position: absolute;
+  left: 47.7178485974%;
+  top: 44.23924375%;
+  animation-delay: -1s;
+}
+.allbub .bub6 {
+  position: absolute;
+  left: 96.0647024995%;
+  top: 60.6145270109%;
+  animation-delay: -1.2s;
+}
+.allbub .bub7 {
+  position: absolute;
+  left: 26.7218555698%;
+  top: 59.2160489387%;
+  animation-delay: -1.4s;
+}
+.allbub .bub8 {
+  position: absolute;
+  left: 56.7113673421%;
+  top: 53.5801707484%;
+  animation-delay: -1.6s;
+}
+.allbub .bub9 {
+  position: absolute;
+  left: 65.1688174784%;
+  top: 28.806122315%;
+  animation-delay: -1.8s;
+}
+.allbub .bub10 {
+  position: absolute;
+  left: 0.5198504118%;
+  top: 33.4247085495%;
+  animation-delay: -2s;
+}
+.allbub .bub11 {
+  position: absolute;
+  left: 48.2302769336%;
+  top: 12.9599428541%;
+  animation-delay: -2.2s;
+}
+.allbub .bub12 {
+  position: absolute;
+  left: 57.6118701702%;
+  top: 24.469135511%;
+  animation-delay: -2.4s;
+}
+.allbub .bub13 {
+  position: absolute;
+  left: 37.6201801031%;
+  top: -12.5384370415%;
+  animation-delay: -2.6s;
+}
+.allbub .bub14 {
+  position: absolute;
+  left: 68.7800738747%;
+  top: 53.6606235945%;
+  animation-delay: -2.8s;
+}
+.allbub .bub15 {
+  position: absolute;
+  left: 82.2810627136%;
+  top: 30.4689370673%;
+  animation-delay: -3s;
+}
+.allbub .bub16 {
+  position: absolute;
+  left: 40.8098834197%;
+  top: -13.2574260973%;
+  animation-delay: -3.2s;
+}
+.allbub .bub17 {
+  position: absolute;
+  left: 5.4024209242%;
+  top: -5.3456860813%;
+  animation-delay: -3.4s;
+}
+.allbub .bub18 {
+  position: absolute;
+  left: 59.7022003794%;
+  top: 3.1056495459%;
+  animation-delay: -3.6s;
+}
+.allbub .bub19 {
+  position: absolute;
+  left: 24.0126606837%;
+  top: 45.6109415065%;
+  animation-delay: -3.8s;
+}
+.allbub .bub20 {
+  position: absolute;
+  left: 84.5796218427%;
+  top: 53.0398806996%;
+  animation-delay: -4s;
+}
+
+@keyframes falling {
+  70% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+    transform: translate(10px, 100%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(100%, 30px);
+  }
+}
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+  
+<div class="about">
+   Pen by <a href="https://ding0327.github.io/namecard/" target="_blank">Ding</a><span class="one"></span>Look<a href="https://codepen.io/Ding0327" target="_blank">codepen</a><span class="two"></span>Instagram<a class="pic" href="https://www.instagram.com/ding___0327/" target="_blank"> </a></div>
+<div class="namecardtext">DING</div><a class="namecard" href="http://www.ncyu.edu.tw/etech/" target="_blank">
+  <h2 class="name">丁美佐<span class="little_eng">(Ding)</span></h2>
+  <h5 class="job">嘉義大學 數位學習科技與管理學系</h5>
+  <hr/>
+  <p class="description">努力成為一個能夠自主學習與成長的不專業斜槓大學生。</p>
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div></a>
+<h3> </h3>
+<div class="allbub">
+  <div class="bub1"></div>
+  <div class="bub2"></div>
+  <div class="bub3"></div>
+  <div class="bub4"></div>
+  <div class="bub5"></div>
+  <div class="bub6"></div>
+  <div class="bub7"></div>
+  <div class="bub8"></div>
+  <div class="bub9"></div>
+  <div class="bub10"></div>
+  <div class="bub11"></div>
+  <div class="bub12"></div>
+  <div class="bub13"></div>
+  <div class="bub14"></div>
+  <div class="bub15"></div>
+  <div class="bub16"></div>
+  <div class="bub17"></div>
+  <div class="bub18"></div>
+  <div class="bub19"></div>
+  <div class="bub20"></div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+
+  
+
+</body>
+
+</html>
